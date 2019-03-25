@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style media="screen">
+    .root{
+      width: 500px;
+      margin: 0 auto;
+    }
+    #line{
+      margin: 10px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="root">
+
+      <div id='line' style="width: 500px;height:400px;">
+    </div>
+  </div>
+
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+
+  <script type="text/javascript">
+    Date.prototype.format = function(pattern) {
+      function zeroize(num) {
+        return num < 10 ? "0" + num : num;
+      }
+      var pattern = pattern; //    YYYY-MM-DD 或 MM-DD-YYYY 或 YYYY-MM-DD , hh : mm : ss
+      var dateObj = {
+        Y: this.getFullYear(),
+        M: zeroize(this.getMonth() + 1),
+        D: zeroize(this.getDate()),
+        h: zeroize(this.getHours()),
+        m: zeroize(this.getMinutes()),
+        s: zeroize(this.getSeconds())
+      };
+      return pattern.replace(/YYYY|MM|DD|hh|mm|ss/g, function(match) {
+        switch (match) {
+          case "YYYY":
+            return dateObj.Y;
+          case "MM":
+            return dateObj.M;
+          case "DD":
+            return dateObj.D;
+          case "hh":
+            return dateObj.h;
+          case "mm":
+            return dateObj.m;
+          case "ss":
+            return dateObj.s;
+        }
+      });
+    };
+  </script>
+  <script src="/js/index.js"></script>
+
+
+</body>
+
+</html>
