@@ -37,7 +37,7 @@ initMemChart();
 
 function requestMem() {
   $.ajax({
-    url: "/update",
+    url: "/info",
     success: function(res) {
       if (option.xAxis.data.length > 10) {
         option.xAxis.data.shift();
